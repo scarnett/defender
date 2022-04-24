@@ -110,5 +110,17 @@
   "googleSignin": "Sign in with Google",
   "@googleSignin": {
     "description": "The sign in with google text"
+  },
+  "signOut": "Sign Out",
+  "@signOut": {
+    "description": "The sign out text"
+  },
+  "appName": "Defender AI 571-C",
+  "@appName": {
+    "description": "The application name text"
+  },
+  "appDescription": "Remote Sentry Weapon System",
+  "@appDescription": {
+    "description": "The application description text"
   }
 }

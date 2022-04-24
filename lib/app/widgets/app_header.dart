@@ -1,5 +1,6 @@
 import 'package:defender/app/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppHeader extends StatelessWidget {
   const AppHeader({
@@ -14,7 +15,7 @@ class AppHeader extends StatelessWidget {
         children: [
           Container(
             child: Text(
-              'Defender AI 571-C'.toUpperCase(), // TODO!
+              AppLocalizations.of(context)!.appName.toUpperCase(),
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium,
             ),
@@ -31,7 +32,7 @@ class AppHeader extends StatelessWidget {
           ),
           Container(
             child: Text(
-              'Remote Sentry Weapon System'.toUpperCase(), // TODO!
+              AppLocalizations.of(context)!.appDescription.toUpperCase(),
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleSmall,
             ),

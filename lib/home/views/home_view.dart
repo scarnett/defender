@@ -2,6 +2,7 @@ import 'package:defender/app/bloc/bloc.dart';
 import 'package:defender/auth/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeView extends StatefulWidget {
   static Page page() => const MaterialPage<void>(child: HomeView());
@@ -34,7 +35,8 @@ class _HomeViewState extends State<HomeView> {
     return Container(
       padding: const EdgeInsets.only(top: 40.0),
       child: TextButton(
-        child: const Text('LOGOUT'),
+        key: const Key('logout_button'),
+        child: Text(AppLocalizations.of(context)!.signOut.toUpperCase()),
         onPressed: () => _tapLogout(context),
       ),
     );
