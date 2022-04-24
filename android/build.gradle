@@ -1,5 +1,12 @@
 buildscript {
     ext.kotlin_version = '1.6.10'
+    ext {
+        compileSdkVersion = 31
+        targetSdkVersion = 31
+        minSdkVersion = 21
+        appCompatVersion = '1.1.0'
+    }
+
     repositories {
         google()
         mavenCentral()
@@ -8,6 +15,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
     }
 }
 

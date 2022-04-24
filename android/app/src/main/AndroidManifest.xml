@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.defender">
+    package="io.ai.defender">
    <application
         android:label="defender"
         android:name="${applicationName}"

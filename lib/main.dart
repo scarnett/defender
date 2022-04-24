@@ -17,8 +17,7 @@ Future<void> main() async {
     storageDirectory: await getTemporaryDirectory(),
   );
 
-  final AuthenticationRepository authenticationRepository =
-      AuthenticationRepository();
+  final AuthenticationRepository authenticationRepository = AuthenticationRepository();
 
   await authenticationRepository.user.first;
 
