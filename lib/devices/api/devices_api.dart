@@ -4,6 +4,7 @@ abstract class DevicesApi {
   const DevicesApi();
 
   Stream<List<Device>> getDevices();
+
   Future<void> saveDevice(
     Device device,
   );
@@ -11,9 +12,4 @@ abstract class DevicesApi {
   Future<void> deleteDevice(
     String id,
   );
-
-  Future<int> clearCompleted();
-  Future<int> completeAll({
-    required bool isCompleted,
-  });
 }

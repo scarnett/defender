@@ -8,20 +8,15 @@ class DeviceRepository {
     required DevicesApi deviceApi,
   }) : _deviceApi = deviceApi;
 
-  Stream<List<Device>> getTodos() => _deviceApi.getDevices();
-  Future<void> saveTodo(
+  Stream<List<Device>> getDevices() => _deviceApi.getDevices();
+
+  Future<void> saveDevice(
     Device device,
   ) =>
       _deviceApi.saveDevice(device);
 
-  Future<void> deleteTodo(
+  Future<void> deleteDevice(
     String id,
   ) =>
       _deviceApi.deleteDevice(id);
-
-  Future<int> clearCompleted() => _deviceApi.clearCompleted();
-  Future<int> completeAll({
-    required bool isCompleted,
-  }) =>
-      _deviceApi.completeAll(isCompleted: isCompleted);
 }
