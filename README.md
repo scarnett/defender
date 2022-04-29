@@ -1,5 +1,13 @@
 # Defender
 
+## Models
+
+### Generation
+
+```bash
+pub run build_runner build
+```
+
 ## I10n
 
 ### Generation
