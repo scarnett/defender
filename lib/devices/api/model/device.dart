@@ -16,25 +16,21 @@ class Device extends Equatable {
     String? id,
     required this.name,
     this.description = '',
-    this.isCompleted = false,
   })  : assert(
           id == null || id.isNotEmpty,
           'id can not be null and should be empty',
         ),
         id = id ?? const Uuid().v4();
-  final bool isCompleted;
 
   Device copyWith({
     String? id,
     String? name,
     String? description,
-    bool? isCompleted,
   }) =>
       Device(
         id: id ?? this.id,
         name: name ?? this.name,
         description: description ?? this.description,
-        isCompleted: isCompleted ?? this.isCompleted,
       );
 
   static Device fromJson(
@@ -49,6 +45,5 @@ class Device extends Equatable {
         id,
         name,
         description,
-        isCompleted,
       ];
 }

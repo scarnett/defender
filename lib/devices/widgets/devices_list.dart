@@ -1,6 +1,7 @@
 import 'package:defender/devices/bloc/devices_bloc.dart';
 import 'package:defender/devices/enums/enums.dart';
 import 'package:defender/devices/repository/repository.dart';
+import 'package:defender/devices/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -51,8 +52,13 @@ class DevicesView extends StatelessWidget {
 
           return CupertinoScrollbar(
             child: ListView(
-              children: const [
-                // TODO!
+              shrinkWrap: true,
+              children: [
+                for (final device in state.devices)
+                  DeviceListTile(
+                    device: device,
+                    onTap: () => {}, // TODO!
+                  ),
               ],
             ),
           );

@@ -13,7 +13,7 @@ class DevicesFirebaseApi implements DevicesApi {
   }
 
   void _init() {
-    deviceCollection.snapshots().map(
+    deviceCollection.get().then(
       (QuerySnapshot<Map<String, dynamic>> snapshot) {
         List<Device> devices = snapshot.docs
             .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Device.fromJson(doc.data()))
