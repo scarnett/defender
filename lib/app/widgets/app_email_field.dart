@@ -16,7 +16,5 @@ class AppEmailField extends FormzInput<String, AppFieldValidationError> {
   AppFieldValidationError? validator(
     String? value,
   ) =>
-      _emailRegExp.hasMatch(value ?? '')
-          ? null
-          : AppFieldValidationError.invalid;
+      _emailRegExp.hasMatch(value ?? '') ? null : AppFieldValidationError.invalid;
 }

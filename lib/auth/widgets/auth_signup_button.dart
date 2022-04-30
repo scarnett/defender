@@ -1,6 +1,6 @@
 import 'package:defender/app/app_theme.dart';
-import 'package:flutter/material.dart';
 import 'package:defender/signup/views/views.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AuthSignUpButton extends StatelessWidget {

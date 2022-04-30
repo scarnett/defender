@@ -8,14 +8,11 @@ class AppPasswordField extends FormzInput<String, AppFieldValidationError> {
     String value = '',
   ]) : super.dirty(value);
 
-  static final _passwordRegExp =
-      RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$');
+  static final _passwordRegExp = RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$');
 
   @override
   AppFieldValidationError? validator(
     String? value,
   ) =>
-      _passwordRegExp.hasMatch(value ?? '')
-          ? null
-          : AppFieldValidationError.invalid;
+      _passwordRegExp.hasMatch(value ?? '') ? null : AppFieldValidationError.invalid;
 }

@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:equatable/equatable.dart';
 import 'package:defender/app/enums/app_status_enum.dart';
 import 'package:defender/auth/auth.dart';
 import 'package:defender/auth/models/user.dart';
+import 'package:equatable/equatable.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:meta/meta.dart';
 
@@ -34,9 +34,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     AppUserChanged event,
     Emitter<AppState> emit,
   ) =>
-      emit(event.user.isNotEmpty
-          ? AppState.authenticated(event.user)
-          : const AppState.unauthenticated());
+      emit(event.user.isNotEmpty ? AppState.authenticated(event.user) : const AppState.unauthenticated());
 
   void _onLogoutRequested(
     AppLogoutRequested event,

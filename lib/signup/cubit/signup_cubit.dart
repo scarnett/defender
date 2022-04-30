@@ -1,8 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/widgets.dart';
 import 'package:defender/app/widgets/widgets.dart';
 import 'package:defender/auth/auth.dart';
+import 'package:defender/auth/exceptions/exceptions.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/widgets.dart';
 import 'package:formz/formz.dart';
 
 part 'signup_state.dart';
@@ -33,8 +34,7 @@ class SignUpCubit extends Cubit<SignUpState> {
     String value,
   ) {
     final AppPasswordField password = AppPasswordField.dirty(value);
-    final AppConfirmPasswordField confirmedPassword =
-        AppConfirmPasswordField.dirty(
+    final AppConfirmPasswordField confirmedPassword = AppConfirmPasswordField.dirty(
       password: password.value,
       value: state.confirmedPassword.value,
     );
@@ -53,8 +53,7 @@ class SignUpCubit extends Cubit<SignUpState> {
   void confirmedPasswordChanged(
     String value,
   ) {
-    final AppConfirmPasswordField confirmedPassword =
-        AppConfirmPasswordField.dirty(
+    final AppConfirmPasswordField confirmedPassword = AppConfirmPasswordField.dirty(
       password: state.password.value,
       value: value,
     );

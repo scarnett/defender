@@ -1,8 +1,7 @@
 import 'package:defender/app/enums/enums.dart';
 import 'package:formz/formz.dart';
 
-class AppConfirmPasswordField
-    extends FormzInput<String, AppFieldValidationError> {
+class AppConfirmPasswordField extends FormzInput<String, AppFieldValidationError> {
   final String password;
 
   const AppConfirmPasswordField.pure({

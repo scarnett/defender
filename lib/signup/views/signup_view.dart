@@ -1,9 +1,9 @@
 import 'package:defender/app/widgets/app_header.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:defender/auth/auth.dart';
 import 'package:defender/signup/cubit/cubit.dart';
 import 'package:defender/signup/forms/forms.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignupView extends StatelessWidget {
   static Route route() => MaterialPageRoute<void>(

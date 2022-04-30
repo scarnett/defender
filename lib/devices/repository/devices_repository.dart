@@ -1,12 +1,12 @@
 import 'package:defender/devices/api/api.dart';
 import 'package:defender/devices/api/model/model.dart';
 
-class DeviceRepository {
+class DevicesRepository {
   final DevicesApi _deviceApi;
 
-  const DeviceRepository({
-    required DevicesApi deviceApi,
-  }) : _deviceApi = deviceApi;
+  const DevicesRepository({
+    required DevicesApi devicesApi,
+  }) : _deviceApi = devicesApi;
 
   Stream<List<Device>> devices() => _deviceApi.devices();
 

@@ -1,1 +1,1 @@
-export 'device_repository.dart';
+export 'devices_repository.dart';

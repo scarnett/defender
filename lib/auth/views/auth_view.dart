@@ -1,9 +1,9 @@
 import 'package:defender/app/widgets/widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:defender/auth/auth.dart';
 import 'package:defender/auth/cubit/cubit.dart';
 import 'package:defender/auth/forms/forms.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginPage extends StatelessWidget {
   static Page page() => const MaterialPage<void>(child: LoginPage());

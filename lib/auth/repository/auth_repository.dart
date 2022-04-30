@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:defender/auth/exceptions/exceptions.dart';
-import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
-import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:flutter/widgets.dart';
 import 'package:defender/auth/extensions/extensions.dart';
 import 'package:defender/auth/models/models.dart';
 import 'package:defender/cache/cache_client.dart';
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/widgets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationRepository {

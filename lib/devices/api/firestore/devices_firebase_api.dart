@@ -6,8 +6,7 @@ import 'package:rxdart/subjects.dart';
 
 class DevicesFirebaseApi implements DevicesApi {
   final CollectionReference<Map<String, dynamic>> deviceCollection = FirebaseFirestore.instance.collection('devices');
-
-  final _deviceStreamController = BehaviorSubject<List<Device>>.seeded(const []);
+  final BehaviorSubject<List<Device>> _deviceStreamController = BehaviorSubject<List<Device>>.seeded(const []);
 
   DevicesFirebaseApi() {
     _init();

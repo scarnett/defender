@@ -1,8 +1,8 @@
 import 'package:defender/app/app.dart';
 import 'package:defender/app/widgets/app_loder.dart';
+import 'package:defender/signup/cubit/cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:defender/signup/cubit/cubit.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:formz/formz.dart';
 
