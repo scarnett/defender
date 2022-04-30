@@ -3,13 +3,13 @@ import 'package:defender/devices/api/model/model.dart';
 abstract class DevicesApi {
   const DevicesApi();
 
-  Stream<List<Device>> getDevices();
+  Stream<List<Device>> devices();
 
-  Future<void> saveDevice(
+  Future<void> save(
     Device device,
   );
 
-  Future<void> deleteDevice(
-    String id,
+  Future<void> delete(
+    String deviceId,
   );
 }

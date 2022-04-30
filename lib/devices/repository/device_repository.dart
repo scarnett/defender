@@ -8,15 +8,15 @@ class DeviceRepository {
     required DevicesApi deviceApi,
   }) : _deviceApi = deviceApi;
 
-  Stream<List<Device>> getDevices() => _deviceApi.getDevices();
+  Stream<List<Device>> devices() => _deviceApi.devices();
 
-  Future<void> saveDevice(
+  Future<void> save(
     Device device,
   ) =>
-      _deviceApi.saveDevice(device);
+      _deviceApi.save(device);
 
-  Future<void> deleteDevice(
-    String id,
+  Future<void> delete(
+    String deviceId,
   ) =>
-      _deviceApi.deleteDevice(id);
+      _deviceApi.delete(deviceId);
 }
