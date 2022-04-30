@@ -1,4 +1,14 @@
 {
+  "version": "App Version {version}",
+  "@version": {
+    "description": "The application version",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "1.0.0"
+      }
+    }
+  },
   "authenticate": "Authenticate",
   "@authenticate": {
     "description": "The authentication appbar text"

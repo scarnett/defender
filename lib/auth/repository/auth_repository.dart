@@ -30,7 +30,6 @@ class AuthenticationRepository {
 
   Stream<User> get user => _firebaseAuth.authStateChanges().map((firebase_auth.User? firebaseUser) {
         final User user = firebaseUser == null ? User.empty : firebaseUser.toUser;
-
         _cache.write(key: userCacheKey, value: user);
         return user;
       });

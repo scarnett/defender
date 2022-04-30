@@ -101,6 +101,10 @@ ThemeData appThemeData = ThemeData(
     thickness: 1.0,
   ),
   textTheme: TextTheme(
+    titleSmall: TextStyle(
+      color: AppTheme.primaryColor,
+      fontFamily: AppTheme.fontFamily,
+    ),
     titleMedium: TextStyle(
       color: AppTheme.primaryColor,
       fontFamily: AppTheme.fontFamily,
@@ -108,9 +112,15 @@ ThemeData appThemeData = ThemeData(
       fontWeight: FontWeight.w700,
       letterSpacing: 1.0,
     ),
-    titleSmall: TextStyle(
+    titleLarge: TextStyle(
+      color: AppTheme.primaryColor,
+      fontWeight: FontWeight.w700,
+      letterSpacing: 1.0,
+    ),
+    displaySmall: TextStyle(
       color: AppTheme.primaryColor,
       fontFamily: AppTheme.fontFamily,
+      fontSize: 10.0,
     ),
   ),
   textSelectionTheme: TextSelectionThemeData(

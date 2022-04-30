@@ -4,15 +4,18 @@ part of 'app_bloc.dart';
 class AppState extends Equatable {
   final AppStatus status;
   final User? user;
+  final PackageInfo? packageInfo;
 
   const AppState({
     this.status = AppStatus.unauthenticated,
     this.user = User.empty,
+    this.packageInfo,
   });
 
   const AppState._({
     this.status = AppStatus.unauthenticated,
     this.user = User.empty,
+    this.packageInfo,
   });
 
   const AppState.initial() : this._();
@@ -23,21 +26,24 @@ class AppState extends Equatable {
 
   const AppState.unauthenticated() : this._(status: AppStatus.unauthenticated);
 
-  AppState copyWith(
+  AppState copyWith({
     AppStatus? status,
     User? user,
-  ) =>
+    PackageInfo? packageInfo,
+  }) =>
       AppState._(
         status: status ?? this.status,
         user: user ?? this.user,
+        packageInfo: packageInfo ?? this.packageInfo,
       );
 
   @override
   List<Object?> get props => [
         status,
         user,
+        packageInfo,
       ];
 
   @override
-  String toString() => 'AppState{status: $status, user: $user}';
+  String toString() => 'AppState{status: $status, user: $user, packageInfo: $packageInfo}';
 }

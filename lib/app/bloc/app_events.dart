@@ -20,3 +20,11 @@ class AppUserChanged extends AppEvent {
     this.user,
   );
 }
+
+class AppPackageInfoChanged extends AppEvent {
+  final PackageInfo packageInfo;
+
+  const AppPackageInfoChanged(
+    this.packageInfo,
+  );
+}

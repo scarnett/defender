@@ -8,17 +8,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class App extends StatelessWidget {
   final AuthenticationRepository _authenticationRepository;
   final DevicesRepository _devicesRepository;
+  final PackageInfo _packageInfo;
 
   const App({
     Key? key,
     required AuthenticationRepository authenticationRepository,
     required DevicesRepository devicesRepository,
+    required PackageInfo packageInfo,
   })  : _authenticationRepository = authenticationRepository,
         _devicesRepository = devicesRepository,
+        _packageInfo = packageInfo,
         super(key: key);
 
   @override
@@ -35,7 +39,7 @@ class App extends StatelessWidget {
             BlocProvider(
               create: (BuildContext context) => AppBloc(
                 authenticationRepository: _authenticationRepository,
-              ),
+              )..add(AppPackageInfoChanged(_packageInfo)),
             ),
             BlocProvider(
               create: (BuildContext context) => DevicesBloc(

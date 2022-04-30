@@ -6,6 +6,7 @@ import 'package:defender/devices/repository/repository.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
@@ -19,15 +20,21 @@ Future<void> main() async {
     storageDirectory: await getTemporaryDirectory(),
   );
 
-  final AuthenticationRepository authenticationRepository = AuthenticationRepository();
-  final DevicesRepository devicesRepository = DevicesRepository(devicesApi: DevicesFirebaseApi());
+  // Package Info
+  final PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
+  // Auth repo
+  final AuthenticationRepository authenticationRepository = AuthenticationRepository();
   await authenticationRepository.user.first;
+
+  // Device repo
+  final DevicesRepository devicesRepository = DevicesRepository(devicesApi: DevicesFirebaseApi());
 
   HydratedBlocOverrides.runZoned(
     () => runApp(App(
       authenticationRepository: authenticationRepository,
       devicesRepository: devicesRepository,
+      packageInfo: packageInfo,
     )),
     blocObserver: AppBlocObserver(),
     storage: storage,

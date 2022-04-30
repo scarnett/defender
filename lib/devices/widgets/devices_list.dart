@@ -24,7 +24,9 @@ class DevicesList extends StatelessWidget {
 }
 
 class DevicesView extends StatelessWidget {
-  const DevicesView({Key? key}) : super(key: key);
+  const DevicesView({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(
