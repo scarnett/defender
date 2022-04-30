@@ -22,7 +22,8 @@ class ButtonStyles {
           ),
         ),
         textStyle: MaterialStateProperty.all(
-          const TextStyle(
+          TextStyle(
+            fontFamily: AppTheme.fontFamily,
             fontSize: 18.0,
             fontWeight: FontWeight.w700,
             letterSpacing: 1.0,
@@ -102,12 +103,14 @@ ThemeData appThemeData = ThemeData(
   textTheme: TextTheme(
     titleMedium: TextStyle(
       color: AppTheme.primaryColor,
+      fontFamily: AppTheme.fontFamily,
       fontSize: 28.0,
       fontWeight: FontWeight.w700,
       letterSpacing: 1.0,
     ),
     titleSmall: TextStyle(
       color: AppTheme.primaryColor,
+      fontFamily: AppTheme.fontFamily,
     ),
   ),
   textSelectionTheme: TextSelectionThemeData(
