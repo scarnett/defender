@@ -10,7 +10,10 @@ abstract class AppEvent extends Equatable {
   String toString() => 'AppEvent{}';
 }
 
-class AppLogoutRequested extends AppEvent {}
+class AppLogoutRequested extends AppEvent {
+  @override
+  String toString() => 'AppLogoutRequested{}';
+}
 
 class AppUserChanged extends AppEvent {
   final User user;
@@ -19,6 +22,9 @@ class AppUserChanged extends AppEvent {
   const AppUserChanged(
     this.user,
   );
+
+  @override
+  String toString() => 'AppUserChanged{user: $user}';
 }
 
 class AppPackageInfoChanged extends AppEvent {
@@ -27,4 +33,7 @@ class AppPackageInfoChanged extends AppEvent {
   const AppPackageInfoChanged(
     this.packageInfo,
   );
+
+  @override
+  String toString() => 'AppPackageInfoChanged{packageInfo: $packageInfo}';
 }

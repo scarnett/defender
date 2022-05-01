@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:defender/app/enums/enums.dart';
+import 'package:defender/app/app.dart';
 import 'package:defender/auth/auth.dart';
 import 'package:defender/auth/models/user.dart';
 import 'package:equatable/equatable.dart';
@@ -11,7 +11,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 part 'app_events.dart';
 part 'app_state.dart';
 
-class AppBloc extends Bloc<AppEvent, AppState> {
+class AppBloc extends HydratedBloc<AppEvent, AppState> {
   final AuthenticationRepository _authenticationRepository;
   late final StreamSubscription<User> _userSubscription;
 
@@ -35,14 +35,19 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   void _onUserChanged(
     AppUserChanged event,
     Emitter<AppState> emit,
-  ) =>
-      emit(event.user.isNotEmpty ? AppState.authenticated(event.user) : const AppState.unauthenticated());
+  ) {
+    AppState authState = event.user.isNotEmpty ? AppState.authenticated(event.user) : const AppState.unauthenticated();
+    emit(state.copyWith(user: authState.user, status: authState.status));
+  }
 
   void _onPackageInfoChanged(
     AppPackageInfoChanged event,
     Emitter<AppState> emit,
   ) =>
-      emit(state.copyWith(packageInfo: event.packageInfo));
+      emit(state.copyWith(packageInfo: {
+        'version': event.packageInfo.version,
+        'buildNumber': event.packageInfo.buildNumber,
+      }));
 
   void _onLogoutRequested(
     AppLogoutRequested event,
@@ -55,4 +60,24 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     _userSubscription.cancel();
     return super.close();
   }
+
+  @override
+  AppState fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      AppState(
+        status: json['status'].appStatus,
+        user: User.fromJson(json['user']),
+        packageInfo: json['packageInfo'],
+      );
+
+  @override
+  Map<String, dynamic> toJson(
+    AppState state,
+  ) =>
+      {
+        'status': state.status.toString(),
+        'user': state.user?.toJson(),
+        'packageInfo': state.packageInfo,
+      };
 }

@@ -58,7 +58,7 @@ class AppDrawerInner extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 children: [
                   AppDrawerItem(
-                    text: AppLocalizations.of(context)!.version(state.packageInfo?.version ?? '').toUpperCase(),
+                    text: AppLocalizations.of(context)!.version(state.packageInfo?['version'] ?? '').toUpperCase(),
                     textStyle: Theme.of(context).textTheme.displaySmall,
                   ),
                 ],

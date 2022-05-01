@@ -121,6 +121,7 @@ ThemeData appThemeData = ThemeData(
       color: AppTheme.primaryColor,
       fontFamily: AppTheme.fontFamily,
       fontSize: 10.0,
+      letterSpacing: 1.0,
     ),
   ),
   textSelectionTheme: TextSelectionThemeData(

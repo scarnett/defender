@@ -4,7 +4,7 @@ part of 'app_bloc.dart';
 class AppState extends Equatable {
   final AppStatus status;
   final User? user;
-  final PackageInfo? packageInfo;
+  final Map<String, dynamic>? packageInfo;
 
   const AppState({
     this.status = AppStatus.unauthenticated,
@@ -29,7 +29,7 @@ class AppState extends Equatable {
   AppState copyWith({
     AppStatus? status,
     User? user,
-    PackageInfo? packageInfo,
+    Map<String, dynamic>? packageInfo,
   }) =>
       AppState._(
         status: status ?? this.status,
