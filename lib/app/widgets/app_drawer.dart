@@ -19,6 +19,7 @@ class AppDrawer extends StatelessWidget {
   ) =>
       Drawer(
         backgroundColor: AppTheme.backgroundColor,
+        elevation: 0.0,
         child: child ?? const AppDrawerInner(),
       );
 }

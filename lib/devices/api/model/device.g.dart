@@ -10,10 +10,12 @@ Device _$DeviceFromJson(Map<String, dynamic> json) => Device(
       id: json['id'] as String?,
       name: json['name'] as String,
       description: json['description'] as String? ?? '',
+      cameraPreview: json['cameraPreview'] as String? ?? '',
     );
 
 Map<String, dynamic> _$DeviceToJson(Device instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
+      'cameraPreview': instance.cameraPreview,
     };

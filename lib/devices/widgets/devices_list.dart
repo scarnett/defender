@@ -38,23 +38,28 @@ class DevicesView extends StatelessWidget {
           DevicesState state,
         ) {
           if (state.devices.isEmpty) {
-            if (state.status == DevicesStatus.loading) {
-              return const Center(child: CupertinoActivityIndicator());
-            } else if (state.status != DevicesStatus.success) {
-              return const SizedBox();
-            } else {
-              return Center(
-                child: Text(
-                  '0 Devices Found', // TODO!
-                  style: Theme.of(context).textTheme.caption,
-                ),
-              );
+            switch (state.status) {
+              case DevicesStatus.loading:
+                return const Center(child: CupertinoActivityIndicator());
+
+              case DevicesStatus.success:
+                return Center(
+                  child: Text(
+                    '0 Devices Found', // TODO!
+                    style: Theme.of(context).textTheme.caption,
+                  ),
+                );
+
+              case DevicesStatus.initial:
+              case DevicesStatus.failure:
+              default:
+                return const SizedBox();
             }
           }
 
           return CupertinoScrollbar(
-            child: ListView(
-              shrinkWrap: true,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
               children: [
                 for (final device in state.devices)
                   DeviceListTile(

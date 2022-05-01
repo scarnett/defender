@@ -11,11 +11,13 @@ class Device extends Equatable {
   final String id;
   final String name;
   final String description;
+  final String cameraPreview;
 
   Device({
     String? id,
     required this.name,
     this.description = '',
+    this.cameraPreview = '',
   })  : assert(
           id == null || id.isNotEmpty,
           'id can not be null and should be empty',
@@ -26,11 +28,13 @@ class Device extends Equatable {
     String? id,
     String? name,
     String? description,
+    String? cameraPreview,
   }) =>
       Device(
         id: id ?? this.id,
         name: name ?? this.name,
         description: description ?? this.description,
+        cameraPreview: cameraPreview ?? this.cameraPreview,
       );
 
   static Device fromJson(
@@ -45,5 +49,6 @@ class Device extends Equatable {
         id,
         name,
         description,
+        cameraPreview,
       ];
 }

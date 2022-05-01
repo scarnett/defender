@@ -26,10 +26,14 @@ class _HomeViewState extends State<HomeView> {
       );
 
   Widget _buildContent() => SafeArea(
-        child: Column(
-          children: const [
-            DevicesList(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: const [
+              DevicesList(),
+            ],
+          ),
         ),
       );
 }
