@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AppTheme {
   static Color get backgroundColor => const Color.fromRGBO(34, 34, 34, 1.0);
   static Color get primaryColor => const Color.fromRGBO(250, 248, 24, 1.0);
   static Color get dangerColor => Colors.red;
+  static Color get borderAccentColor => Colors.black;
   static String get fontFamily => 'Orbitron';
 }
 
@@ -55,6 +57,11 @@ ThemeData appThemeData = ThemeData(
       fontSize: 16.0,
       fontWeight: FontWeight.w700,
       letterSpacing: 1.0,
+    ),
+    systemOverlayStyle: const SystemUiOverlayStyle(
+      statusBarBrightness: Brightness.light,
+      systemNavigationBarIconBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.light,
     ),
   ),
   cupertinoOverrideTheme: CupertinoThemeData(
