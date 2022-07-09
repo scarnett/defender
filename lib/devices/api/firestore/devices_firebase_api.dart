@@ -7,6 +7,7 @@ import 'package:rxdart/subjects.dart';
 class DevicesFirebaseApi implements DevicesApi {
   final CollectionReference<Map<String, dynamic>> deviceCollection = FirebaseFirestore.instance.collection('devices');
   final BehaviorSubject<List<Device>> _deviceStreamController = BehaviorSubject<List<Device>>.seeded(const []);
+  Device? device;
 
   DevicesFirebaseApi() {
     _init();
@@ -27,6 +28,9 @@ class DevicesFirebaseApi implements DevicesApi {
 
   @override
   Stream<List<Device>> devices() => _deviceStreamController.asBroadcastStream();
+
+  @override
+  Device? activeDevice() => device;
 
   @override
   Future<void> save(

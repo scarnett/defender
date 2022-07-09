@@ -1,9 +1,10 @@
 import 'package:defender/devices/api/model/model.dart';
 
 abstract class DevicesApi {
-  const DevicesApi();
-
   Stream<List<Device>> devices();
+  Device? activeDevice();
+
+  DevicesApi();
 
   Future<void> save(
     Device device,

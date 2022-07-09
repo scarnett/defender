@@ -16,3 +16,12 @@ class DevicesSubscriptionRequested extends DevicesEvent {
   @override
   String toString() => 'DevicesSubscriptionRequested{}';
 }
+
+class DevicesActivation extends DevicesEvent {
+  final Device device;
+
+  const DevicesActivation(this.device);
+
+  @override
+  String toString() => 'DevicesActivation{device: $device}';
+}

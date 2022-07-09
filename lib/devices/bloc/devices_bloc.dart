@@ -15,6 +15,7 @@ class DevicesBloc extends Bloc<DevicesEvent, DevicesState> {
   })  : _devicesRepository = devicesRepository,
         super(const DevicesState()) {
     on<DevicesSubscriptionRequested>(_onSubscriptionRequested);
+    on<DevicesActivation>(_onActivateDevice);
   }
 
   Future<void> _onSubscriptionRequested(
@@ -35,6 +36,17 @@ class DevicesBloc extends Bloc<DevicesEvent, DevicesState> {
       ),
       onError: (_, __) => state.copyWith(
         status: () => DevicesStatus.failure,
+      ),
+    );
+  }
+
+  Future<void> _onActivateDevice(
+    DevicesActivation event,
+    Emitter<DevicesState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        activeDevice: () => event.device,
       ),
     );
   }

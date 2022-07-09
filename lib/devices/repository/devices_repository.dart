@@ -9,6 +9,7 @@ class DevicesRepository {
   }) : _deviceApi = devicesApi;
 
   Stream<List<Device>> devices() => _deviceApi.devices();
+  Device? activeDevice() => _deviceApi.activeDevice();
 
   Future<void> save(
     Device device,
