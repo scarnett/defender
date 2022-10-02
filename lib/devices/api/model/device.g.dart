@@ -11,8 +11,7 @@ Device _$DeviceFromJson(Map<String, dynamic> json) => Device(
       name: json['name'] as String,
       description: json['description'] as String? ?? '',
       cameraPreview: json['cameraPreview'] as String? ?? '',
-      lastUpdated:
-          const TimestampConverter().fromJson(json['lastUpdated'] as Timestamp),
+      lastUpdated: DateTime.parse(json['lastUpdated'] as String),
     );
 
 Map<String, dynamic> _$DeviceToJson(Device instance) => <String, dynamic>{
@@ -20,5 +19,5 @@ Map<String, dynamic> _$DeviceToJson(Device instance) => <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
       'cameraPreview': instance.cameraPreview,
-      'lastUpdated': const TimestampConverter().toJson(instance.lastUpdated),
+      'lastUpdated': instance.lastUpdated.toIso8601String(),
     };

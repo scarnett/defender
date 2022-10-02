@@ -5,6 +5,7 @@ import 'package:defender/devices/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DevicesList extends StatelessWidget {
   const DevicesList({
@@ -15,10 +16,14 @@ class DevicesList extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) =>
-      BlocProvider(
-        create: (BuildContext context) => DevicesBloc(
-          devicesRepository: context.read<DevicesRepository>(),
-        )..add(const DevicesSubscriptionRequested()),
+      MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (BuildContext context) => DevicesBloc(
+              devicesRepository: context.read<DevicesRepository>(),
+            )..add(const DevicesSubscriptionRequested()),
+          ),
+        ],
         child: const DevicesView(),
       );
 }
@@ -45,7 +50,7 @@ class DevicesView extends StatelessWidget {
               case DevicesStatus.success:
                 return Center(
                   child: Text(
-                    '0 Devices Found', // TODO!
+                    AppLocalizations.of(context)!.devicesNone,
                     style: Theme.of(context).textTheme.caption,
                   ),
                 );

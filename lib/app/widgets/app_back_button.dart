@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class BackButton extends StatelessWidget {
+  final VoidCallback? onPressedCallback;
+
   const BackButton({
     Key? key,
+    this.onPressedCallback,
   }) : super(key: key);
 
   @override
@@ -14,6 +17,12 @@ class BackButton extends StatelessWidget {
           Icons.chevron_left,
           size: 36.0,
         ),
-        onPressed: () => Navigator.pop(context, false),
+        onPressed: () {
+          if (onPressedCallback != null) {
+            onPressedCallback!();
+          }
+
+          Navigator.of(context).pop();
+        },
       );
 }

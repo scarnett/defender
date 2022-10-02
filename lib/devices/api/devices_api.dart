@@ -2,7 +2,6 @@ import 'package:defender/devices/api/model/model.dart';
 
 abstract class DevicesApi {
   Stream<List<Device>> devices();
-  Device? activeDevice();
 
   DevicesApi();
 

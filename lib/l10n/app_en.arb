@@ -109,6 +109,10 @@
   "@matchPassword": {
     "description": "The password do not match text"
   },
+  "name": "Name",
+  "@name": {
+    "description": "The name text"
+  },
   "email": "Email",
   "@email": {
     "description": "The email text"
@@ -125,6 +129,10 @@
   "@signOut": {
     "description": "The sign out text"
   },
+  "required": "Required",
+  "@requiredEmail": {
+    "description": "The required text"
+  },
   "appName": "Defender AI 571-C",
   "@appName": {
     "description": "The application name text"
@@ -132,5 +140,17 @@
   "appDescription": "Remote Sentry Weapon System",
   "@appDescription": {
     "description": "The application description text"
+  },
+  "devicesNone": "0 Devices Found",
+  "@devicesNone": {
+    "description": "The 0 devices found text"
+  },
+  "deviceSettingsSave": "Save Settings",
+  "@deviceSettingsSave": {
+    "description": "The save settings text"
+  },
+  "deviceSettingsSaveFailure": "Save Device Settings Failure",
+  "@deviceSettingsSaveFailure": {
+    "description": "The save device settings failure snackbar message"
   }
 }

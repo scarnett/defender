@@ -1,18 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-class TimestampConverter implements JsonConverter<DateTime, Timestamp> {
+class TimestampConverter implements JsonConverter<Timestamp, String> {
   const TimestampConverter();
 
   @override
-  DateTime fromJson(
-    Timestamp timestamp,
+  Timestamp fromJson(
+    String timestamp,
   ) =>
-      timestamp.toDate();
+      Timestamp.fromDate(DateTime.parse(timestamp));
 
   @override
-  Timestamp toJson(
-    DateTime date,
+  String toJson(
+    Timestamp timestamp,
   ) =>
-      Timestamp.fromDate(date);
+      timestamp.toString();
 }

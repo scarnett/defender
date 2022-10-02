@@ -1,7 +1,9 @@
 import 'package:defender/app/app_theme.dart';
 import 'package:defender/devices/api/model/model.dart';
+import 'package:defender/devices/cubit/cubit.dart';
 import 'package:defender/devices/views/views.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DeviceListTile extends StatelessWidget {
   final Device device;
@@ -42,18 +44,24 @@ class DeviceListTile extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.only(
-                    right: 10.0,
-                  ),
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.settings,
-                      color: AppTheme.primaryColor,
-                      size: 20.0,
+                BlocBuilder<DeviceSettingsCubit, DeviceSettingsState>(
+                  builder: (
+                    BuildContext context,
+                    DeviceSettingsState state,
+                  ) =>
+                      Container(
+                    padding: const EdgeInsets.only(
+                      right: 10.0,
                     ),
-                    splashRadius: 20.0,
-                    onPressed: () => _tapSettings(context),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.settings,
+                        color: AppTheme.primaryColor,
+                        size: 20.0,
+                      ),
+                      splashRadius: 20.0,
+                      onPressed: () => _tapSettings(context),
+                    ),
                   ),
                 ),
               ],
@@ -98,7 +106,7 @@ class DeviceListTile extends StatelessWidget {
   _tapSettings(
     BuildContext context,
   ) {
-    // context.read<DeviceSettingsCubit>();
+    context.read<DeviceSettingsCubit>().setDevice(device);
     Navigator.of(context).push(DeviceSettingsPage.route());
   }
 }

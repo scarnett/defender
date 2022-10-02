@@ -2,6 +2,7 @@ import 'package:defender/app/app.dart';
 import 'package:defender/app/bloc/bloc.dart';
 import 'package:defender/auth/auth.dart';
 import 'package:defender/devices/bloc/devices_bloc.dart';
+import 'package:defender/devices/cubit/cubit.dart';
 import 'package:defender/devices/repository/repository.dart';
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +44,11 @@ class App extends StatelessWidget {
             ),
             BlocProvider(
               create: (BuildContext context) => DevicesBloc(
+                devicesRepository: _devicesRepository,
+              ),
+            ),
+            BlocProvider(
+              create: (BuildContext context) => DeviceSettingsCubit(
                 devicesRepository: _devicesRepository,
               ),
             ),

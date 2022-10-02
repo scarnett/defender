@@ -17,7 +17,7 @@ Future<void> main() async {
 
   // Hydrated Bloc
   final HydratedStorage storage = await HydratedStorage.build(
-    storageDirectory: await getTemporaryDirectory(),
+    storageDirectory: await getApplicationDocumentsDirectory(),
   );
 
   // Package Info

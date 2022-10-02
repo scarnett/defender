@@ -6,4 +6,5 @@ export 'app_email_field.dart';
 export 'app_error.dart';
 export 'app_header.dart';
 export 'app_password_field.dart';
+export 'app_required_field.dart';
 export 'app_snackbar.dart';

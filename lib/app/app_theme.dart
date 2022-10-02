@@ -115,7 +115,7 @@ ThemeData appThemeData = ThemeData(
     titleMedium: TextStyle(
       color: AppTheme.primaryColor,
       fontFamily: AppTheme.fontFamily,
-      fontSize: 28.0,
+      fontSize: 18.0,
       fontWeight: FontWeight.w700,
       letterSpacing: 1.0,
     ),

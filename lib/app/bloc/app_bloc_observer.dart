@@ -7,7 +7,7 @@ class AppBlocObserver extends BlocObserver {
     Bloc bloc,
     Object? event,
   ) {
-    // print(event.toString());
+    print(event.toString());
     super.onEvent(bloc, event);
   }
 
@@ -17,7 +17,7 @@ class AppBlocObserver extends BlocObserver {
     BlocBase bloc,
     Change change,
   ) {
-    // print(change.toString());
+    print(change.toString());
     super.onChange(bloc, change);
   }
 
@@ -27,7 +27,7 @@ class AppBlocObserver extends BlocObserver {
     Bloc bloc,
     Transition transition,
   ) {
-    // print(transition.toString());
+    print(transition.toString());
     super.onTransition(bloc, transition);
   }
 
@@ -38,8 +38,8 @@ class AppBlocObserver extends BlocObserver {
     Object error,
     StackTrace stackTrace,
   ) {
-    // print(error);
-    // print(stackTrace);
+    print(error);
+    print(stackTrace);
     super.onError(bloc, error, stackTrace);
   }
 }

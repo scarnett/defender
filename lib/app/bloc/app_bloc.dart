@@ -66,7 +66,7 @@ class AppBloc extends HydratedBloc<AppEvent, AppState> {
     Map<String, dynamic> json,
   ) =>
       AppState(
-        status: json['status'].appStatus,
+        status: (json['status'] as String).getAppStatus(),
         user: User.fromJson(json['user']),
         packageInfo: json['packageInfo'],
       );

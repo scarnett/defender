@@ -26,7 +26,7 @@ class Device extends Equatable {
     required this.lastUpdated,
   })  : assert(
           id == null || id.isNotEmpty,
-          'id can not be null and should be empty',
+          'id can not be null and should not be empty',
         ),
         id = id ?? const Uuid().v4();
 
@@ -50,12 +50,22 @@ class Device extends Equatable {
   ) =>
       _$DeviceFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DeviceToJson(this)..remove('_id');
+  Map<String, dynamic> toJson() => _$DeviceToJson(this);
 
-  factory Device.fromSnapshot(
+  factory Device.fromFirestore(
     DocumentSnapshot snapshot,
-  ) =>
-      _$DeviceFromJson(snapshot.data() as Map<String, dynamic>);
+  ) {
+    Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
+    data['id'] = snapshot.id;
+    data['lastUpdated'] = (data['lastUpdated'] as Timestamp).toDate().toIso8601String();
+    return _$DeviceFromJson(data);
+  }
+
+  Map<String, dynamic> toFirestore() {
+    Map<String, dynamic> data = _$DeviceToJson(this);
+    data['lastUpdated'] = Timestamp.fromDate(DateTime.now());
+    return data;
+  }
 
   @override
   List<Object> get props => [
