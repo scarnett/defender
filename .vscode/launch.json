@@ -1,25 +1,25 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "name": "Run DEV",
-        "type": "dart",
-        "request": "launch",
-        "program": "lib/main.dart",
-        "args": [
-          "--flavor",
-          "dev"
-        ]
-      },
-      {
-        "name": "Run PROD",
-        "type": "dart",
-        "request": "launch",
-        "program": "lib/main.dart",
-        "args": [
-          "--flavor",
-          "prod"
-        ]
-      }
-    ]
-  }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run DEV",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "--flavor",
+        "dev"
+      ]
+    },
+    {
+      "name": "Run PROD",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "--flavor",
+        "prod"
+      ]
+    }
+  ]
+}
