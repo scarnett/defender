@@ -49,5 +49,7 @@
 	</array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>We use the camera to scan qr codes</string>
 </dict>
 </plist>

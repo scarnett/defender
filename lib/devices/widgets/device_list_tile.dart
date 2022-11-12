@@ -37,7 +37,7 @@ class DeviceListTile extends StatelessWidget {
                       vertical: 10.0,
                     ),
                     child: Text(
-                      device.name.toUpperCase(),
+                      device.name!.toUpperCase(),
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(letterSpacing: 1.0),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,

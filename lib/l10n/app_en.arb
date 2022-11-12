@@ -145,6 +145,18 @@
   "@devicesNone": {
     "description": "The 0 devices found text"
   },
+  "devices": "Devices",
+  "@devices": {
+    "description": "The devices text"
+  },
+  "addNewDevice": "Add New Device",
+  "@addNewDevice": {
+    "description": "The add new device text"
+  },
+  "deviceSettings": "Settings",
+  "@deviceSettings": {
+    "description": "The settings text"
+  },
   "deviceSettingsSave": "Save Settings",
   "@deviceSettingsSave": {
     "description": "The save settings text"

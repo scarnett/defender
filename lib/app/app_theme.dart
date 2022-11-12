@@ -46,7 +46,7 @@ ThemeData appThemeData = ThemeData(
   fontFamily: AppTheme.fontFamily,
   appBarTheme: AppBarTheme(
     backgroundColor: AppTheme.backgroundColor,
-    centerTitle: true,
+    centerTitle: false,
     elevation: 0.0,
     iconTheme: IconThemeData(
       color: AppTheme.primaryColor,

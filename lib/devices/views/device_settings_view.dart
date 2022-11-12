@@ -3,6 +3,7 @@ import 'package:defender/devices/cubit/device_settings_cubit.dart';
 import 'package:defender/devices/forms/forms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DeviceSettingsPage extends StatelessWidget {
   static Route route() => MaterialPageRoute<void>(
@@ -24,6 +25,7 @@ class DeviceSettingsPage extends StatelessWidget {
         ) =>
             Scaffold(
           appBar: AppBar(
+            title: Text(AppLocalizations.of(context)!.deviceSettings),
             leading: app_widgets.BackButton(
               onPressedCallback: () => context.read<DeviceSettingsCubit>().clearDevice(),
             ),

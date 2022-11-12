@@ -1,7 +1,6 @@
 import 'package:defender/app/utils/app_snackbar_utils.dart';
 import 'package:defender/devices/cubit/cubit.dart';
-import 'package:defender/devices/widgets/device_name_field.dart';
-import 'package:defender/devices/widgets/device_settings_button.dart';
+import 'package:defender/devices/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

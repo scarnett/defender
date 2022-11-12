@@ -11,19 +11,19 @@ part 'device.g.dart';
 @JsonSerializable()
 class Device extends Equatable {
   final String id;
-  final String name;
-  final String description;
-  final String cameraPreview;
+  final String? name;
+  final String? description;
+  final String? cameraPreview;
 
   @TimestampConverter()
-  final DateTime lastUpdated;
+  final DateTime? lastUpdated;
 
   Device({
     String? id,
-    required this.name,
-    this.description = '',
-    this.cameraPreview = '',
-    required this.lastUpdated,
+    this.name,
+    this.description,
+    this.cameraPreview,
+    this.lastUpdated,
   })  : assert(
           id == null || id.isNotEmpty,
           'id can not be null and should not be empty',
@@ -68,7 +68,7 @@ class Device extends Equatable {
   }
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         id,
         name,
         description,

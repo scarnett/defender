@@ -1,6 +1,7 @@
 import 'package:defender/app/app_theme.dart';
 import 'package:defender/app/bloc/bloc.dart';
 import 'package:defender/app/widgets/app_drawer_item.dart';
+import 'package:defender/devices/views/views.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -47,6 +48,11 @@ class AppDrawerInner extends StatelessWidget {
                   padding: EdgeInsets.zero,
                   children: <Widget>[
                     AppDrawerItem(
+                      key: const Key('add_new_device_button'),
+                      text: AppLocalizations.of(context)!.addNewDevice.toUpperCase(),
+                      onTap: () => _tapAddNewDevice(context),
+                    ),
+                    AppDrawerItem(
                       key: const Key('signout_button'),
                       text: AppLocalizations.of(context)!.signOut.toUpperCase(),
                       onTap: () => _tapLogout(context),
@@ -68,6 +74,13 @@ class AppDrawerInner extends StatelessWidget {
           ),
         ),
       );
+
+  void _tapAddNewDevice(
+    BuildContext context,
+  ) {
+    Navigator.pop(context); // Closes the drawer
+    Navigator.of(context).push(DeviceCreatePage.route());
+  }
 
   void _tapLogout(
     BuildContext context,
